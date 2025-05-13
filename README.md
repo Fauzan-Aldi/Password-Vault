@@ -35,7 +35,7 @@ Jika muncul versi pip (misalnya `pip 21.1.2`), berarti pip sudah terpasang.
 Clone atau download project ini dari GitHub menggunakan perintah berikut:
 
 ```bash
-git clone https://github.com/53buahapel/passman.git
+git clone https://github.com/Fauzan-Aldi/Password-Vault.git
 ```
 
 ### 3. **Buka Terminal dan Akses Folder Project**
