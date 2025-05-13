@@ -1,0 +1,124 @@
+@use './variables' as *;
+@use './animation' as *;
+
+.card {
+  overflow: hidden;
+  border-radius: 12px;
+  background-color: $card-bg;
+  max-width: 500px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  
+  &:hover {
+    box-shadow: 0 6px 22px rgba(0, 0, 0, 0.18);
+    transform: translateY(-3px);
+  }
+
+  .image-site {
+    width: 100%;
+    height: 160px;
+    background-color: rgba(255, 255, 255, 0.05);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .card-heading {
+    padding: 0.5rem 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    
+    .site {
+      a {
+        font-size: 1.5em;
+        display: inline-block;
+        font-weight: 600;
+        color: $white-color;
+        text-decoration: none;
+        transition: color 0.2s ease;
+
+        &:hover {
+          color: $secondary-color;
+        }
+      }
+    }
+  }
+
+  .card-content {
+    padding: 1rem;
+
+    .spin-anim {
+      animation: spin 0.8s ease-in-out;
+    }
+
+    .wrapper {
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      margin: 12px 0;
+      padding: 0.75rem;
+      border-radius: 8px;
+      font-size: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: $white-color;
+      overflow-x: auto;
+      background-color: rgba(255, 255, 255, 0.02);
+      transition: background-color 0.2s ease;
+      
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.04);
+        border-color: rgba(255, 255, 255, 0.2);
+      }
+
+      h5 {
+        margin: 0;
+        font-weight: normal;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: calc(100% - 70px);
+      }
+      
+      .password-text {
+        font-family: monospace;
+        letter-spacing: 1px;
+        
+        .password-hidden {
+          color: $gray-color;
+        }
+      }
+
+      .action-icons {
+        display: flex;
+        gap: 6px;
+      }
+
+      .icon {
+        width: 18px;
+        color: $gray-color;
+        cursor: pointer;
+        padding: 6px;
+        border-radius: 50%;
+        transition: all 0.2s ease;
+        
+        &:hover {
+          color: $white-color;
+          background-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        &.toggle-password {
+          color: $secondary-color;
+          
+          &:hover {
+            color: lighten($secondary-color, 10%);
+          }
+        }
+      }
+    }
+  }
+}

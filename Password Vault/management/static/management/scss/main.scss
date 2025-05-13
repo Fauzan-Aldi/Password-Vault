@@ -1,0 +1,200 @@
+@use './partials/typography';
+@use './partials/card';
+@use './partials/form';
+@use './partials/delete-confirm';
+@use './partials/variables' as *;
+@use './partials/mixins' as *;
+
+.management {
+  min-height: 100vh;
+  background-color: $primary-color;
+  
+  header {
+    padding: 3rem 2rem 2rem;
+    background: linear-gradient(to right, $primary-color, lighten($primary-color, 5%));
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    margin-bottom: 2rem;
+    display: flex;
+    gap: 40px;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
+
+    @include media-query(576px) {
+      flex-direction: column;
+      padding: 2rem 1.5rem;
+    }
+
+    .left-content {
+      flex: 0.8;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
+      img {
+        max-width: 280px;
+        opacity: 0.8;
+        
+        @include media-query(576px) {
+          max-width: 200px;
+          margin-bottom: 1rem;
+        }
+      }
+    }
+
+    .right-content {
+      flex: 2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      gap: 24px;
+
+      .action {
+        display: flex;
+        gap: 12px;
+        
+        @include media-query(376px) {
+          flex-direction: column;
+          align-items: center;
+          width: 100%;
+          
+          .btn {
+            width: 100%;
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+
+  .list-card {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 1rem 2rem 3rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 2rem;
+
+    @include media-query(576px) {
+      padding: 1rem;
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .create-form {
+    color: $white-color;
+    padding: 2rem;
+    margin-top: 1rem;
+    max-width: 700px;
+    margin: 0 auto;
+    background: $card-bg;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  }
+
+  .manage-content {
+    max-width: 1400px;
+    margin: 0 auto 2rem;
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    background: $card-bg;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    
+    @include media-query(768px) {
+      overflow-x: auto;
+      margin: 0 1rem 2rem;
+      padding: 1rem;
+    }
+
+    table {
+      border: none;
+      border-collapse: collapse;
+      
+      th {
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        font-size: 0.8rem;
+        padding: 1rem 0.75rem;
+        color: $gray-color;
+        font-weight: 600;
+        text-align: left;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      }
+      
+      td {
+        padding: 0.9rem 0.75rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        font-size: 0.95rem;
+        
+        &:first-child {
+          color: $gray-color;
+        }
+        
+        &.password-cell {
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          
+          .password-hidden {
+            color: $gray-color;
+            font-family: monospace;
+            letter-spacing: 1px;
+          }
+          
+          .password-visible {
+            font-family: monospace;
+            letter-spacing: 1px;
+          }
+          
+          .toggle-password-btn {
+            background: none;
+            border: none;
+            color: $secondary-color;
+            cursor: pointer;
+            padding: 4px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+            
+            &:hover {
+              background-color: rgba(255, 255, 255, 0.1);
+            }
+          }
+        }
+      }
+      
+      tbody tr {
+        transition: background-color 0.2s ease;
+        
+        &:hover {
+          background-color: $hover-color !important;
+        }
+      }
+    }
+
+    .btn-action {
+      display: flex;
+      gap: 8px;
+    }
+  }
+
+  .current-image {
+    width: 100%;
+    margin: -0.5rem 0 1rem;
+
+    small {
+      color: $gray-color;
+      a {
+        color: $secondary-color;
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}

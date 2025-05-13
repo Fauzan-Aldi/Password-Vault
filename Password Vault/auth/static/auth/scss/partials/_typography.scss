@@ -1,0 +1,45 @@
+@use './variables' as *;
+@use './mixins' as *;
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+
+body {
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: $white-color;
+}
+
+.title-page {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: $white-color;
+  letter-spacing: 0;
+  
+  @include media-query(576px) {
+    font-size: 1.75rem;
+  }
+}
+
+.desc {
+  color: $gray-color;
+  font-size: 1rem;
+  font-weight: 400;
+  text-align: center;
+  max-width: 380px;
+  
+  @include media-query(400px) {
+    font-size: 0.9rem;
+  }
+}
+
+.text {
+  @include flex-center(column);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  font-weight: 600;
+}

@@ -1,0 +1,130 @@
+@use './variables' as *;
+@use './mixins' as *;
+
+#list-form {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  
+  @include media-query(475px) {
+    flex-direction: column;
+  }
+
+  .main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    
+    @include media-query(475px) {
+      flex-direction: column;
+    }
+  }
+
+  .btn-all-list {
+    @include media-query(475px) {
+      width: 100%;
+      text-align: center;
+    }
+  }
+
+  #search {
+    padding: 0.75rem 1rem;
+    width: 100%;
+    max-width: 450px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background-color: $hover-color;
+    color: $white-color;
+    transition: all 0.2s ease;
+
+    &:focus {
+      outline: none;
+      border-color: rgba($secondary-color, 0.5);
+      box-shadow: 0 0 0 2px rgba($secondary-color, 0.1);
+    }
+    
+    &::placeholder {
+      color: $gray-color;
+    }
+  }
+}
+
+#create-form {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+
+  .btn {
+    width: 100%;
+    margin-top: 10px;
+
+    &:hover {
+      transform: none;
+      opacity: 0.9;
+    }
+  }
+
+  ::placeholder {
+    color: rgba($white-color, 0.5);
+  }
+
+  input {
+    padding: 0.75rem 1rem;
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background-color: $hover-color;
+    color: $white-color;
+    transition: all 0.2s ease;
+
+    &:focus {
+      outline: none;
+      border-color: rgba($secondary-color, 0.5);
+      box-shadow: 0 0 0 2px rgba($secondary-color, 0.1);
+    }
+    
+    &[type="file"] {
+      padding: 8px;
+      background-color: transparent;
+      border: 1px dashed rgba(255, 255, 255, 0.1);
+      cursor: pointer;
+      
+      &::-webkit-file-upload-button {
+        background: $hover-color;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 6px;
+        color: $white-color;
+        cursor: pointer;
+        padding: 6px 12px;
+        margin-right: 10px;
+        transition: all 0.2s ease;
+        
+        &:hover {
+          background: rgba(255, 255, 255, 0.1);
+        }
+      }
+    }
+  }
+
+  .errorlist {
+    background-color: rgba(220, 53, 69, 0.1);
+    border: 1px solid rgba(220, 53, 69, 0.3);
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+    color: #ff6b6b;
+    width: 100%;
+
+    li {
+      list-style: none;
+      font-size: 0.85rem;
+      margin: 0.25rem 0;
+    }
+  }
+}

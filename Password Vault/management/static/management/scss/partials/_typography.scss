@@ -1,0 +1,62 @@
+@use './variables' as *;
+@use './mixins' as *;
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+
+body {
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: $white-color;
+}
+
+.title-page {
+  text-align: center;
+  font-size: 1.8rem;
+  letter-spacing: 0.1rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: $white-color;
+
+  @include media-query(768px) {
+    font-size: 1.6rem;
+  }
+  
+  @include media-query(576px) {
+    font-size: 1.4rem;
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  font-weight: 500;
+}
+
+p {
+  margin-top: 0;
+}
+
+a {
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.card {
+  .card-heading {
+    .site {
+      padding: 1rem;
+      a {
+        font-size: 1.25rem;
+        font-weight: 500;
+        color: $white-color;
+
+        @include media-query(376px) {
+          font-size: 1.1rem;
+        }
+
+        &:hover {
+          color: $secondary-color;
+        }
+      }
+    }
+  }
+}

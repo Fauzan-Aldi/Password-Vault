@@ -1,0 +1,31 @@
+{% extends 'management/base.html' %} {% load static %}
+
+<!-- PAGE TITLE -->
+{% block title %}{{ block.super }} | Create{% endblock title %}
+
+<!-- MAIN CONTENT -->
+{% block content %}
+<div class="management">
+  <header>
+    <div class="left-content">
+      <img src="{% static 'management/images/create.svg' %}" alt="the illustration image" />
+    </div>
+    <div class="right-content">
+      <h1 class="title-page">Create Your New Account List</h1>
+      <div class="action">
+        <a href="{% url 'management:list' %}" class="btn">Show All</a>
+        <a href="{% url 'management:manage' %}" class="btn">Manage</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="create-form">
+    <form id="create-form" method="POST" enctype="multipart/form-data">
+      {% csrf_token %} {% for field in form %}{{field}}
+      <!-- SHOW ERROR -->
+      {{field.errors}} {% endfor %}
+      <button type="submit" class="btn btn-white btn-sm">Create</button>
+    </form>
+  </div>
+</div>
+{% endblock content %}

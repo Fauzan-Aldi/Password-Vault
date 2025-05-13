@@ -1,0 +1,53 @@
+@use './variables' as *;
+
+.btn {
+  padding: 0.75rem 1.5rem;
+  cursor: pointer;
+  background-color: $primary-color;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: $white-color;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  position: relative;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+
+  &-white {
+    background-color: $secondary-color;
+    color: $primary-color;
+    border: none;
+  }
+  
+  &-sm {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.85rem;
+  }
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+
+  &-badge {
+    border-radius: 6px;
+    padding: 0.4rem 0.8rem;
+    font-size: 0.8rem;
+  }
+
+  &-edit {
+    background-color: #2563eb;
+    color: $white-color;
+  }
+
+  &-delete {
+    background-color: #dc2626;
+    color: $white-color;
+  }
+}

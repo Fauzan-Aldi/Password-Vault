@@ -1,0 +1,34 @@
+{% extends 'auth/base.html' %} {% load static %}
+{% block title %}{{ block.super }} | Login{% endblock title %}
+
+{% block content %}
+<div class="container">
+  <div class="auth">
+    <div class="left-content">
+      <div class="text">
+        <h1 class="title-page">Login</h1>
+        <p class="desc">Before entering you must to login first</p>
+      </div>
+      <img src="{% static 'auth/images/login.svg' %}" alt="" />
+    </div>
+    <div class="right-content">
+      <form method="POST">
+        {% csrf_token %} {% for field in form %} {{field.label_tag}} {{field}}{% endfor %}
+  
+        {{form.non_field_errors}}
+  
+        {% if request.GET.next %}
+        <input type="hidden" name="next" value="{{request.GET.next}}" />
+        {% else %}
+        <input type="hidden" name="next" value="/" />
+        {% endif %}
+        <button type="submit" class="btn btn-white btn-sm">Login</button>
+        
+        <div style="width: 100%; text-align: center; margin-top: 20px;">
+          <a href="{% url 'auth:register' %}" class="reglog">Don't have an account? Register</a>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock content %}

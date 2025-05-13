@@ -1,0 +1,40 @@
+{% extends 'management/base.html' %} {% load static %}
+
+<!-- TITLE PAGE -->
+{% block title %}{{ block.super }} | List{% endblock title %}
+
+<!-- MAIN CONTENT -->
+{% block content %}
+<div class="management">
+  <header>
+    <div class="left-content">
+      <img src="{% static 'management/images/list.svg' %}" alt="the illustration image" />
+    </div>
+    <div class="right-content">
+      <h1 class="title-page">Your Account and Password List</h1>
+      <div class="action">
+        <a href="{% url 'management:create' %}" class="btn">Create New</a>
+        <a href="{% url 'management:manage' %}" class="btn">Manage</a>
+      </div>
+      {% include 'management/partials/form-search.html' with isList=True %}
+    </div>
+  </header>
+
+  <div class="list-card">
+    {% if accounts|length > 0 %}
+      {% for account in accounts %}
+      <!-- include card content -->
+      {% include 'management/partials/card.html' with img_url=account.image_site.url site_name=account.site_name username=account.username email=account.email decrypted_password=account.decrypted_password %}
+      {% endfor %}
+    {% else %}
+      {% include 'no-data-found.html' %}
+    {% endif %}
+  </div>
+  
+  {% include 'pagination.html' %}
+</div>
+
+
+<!-- JAVASCRIPT -->
+<script src="{% static 'management/js/list.js' %}"></script>
+{% endblock content %}
