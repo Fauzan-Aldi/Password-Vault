@@ -1,10 +1,10 @@
-# **Password-Vault**
+# **Password Vault**
 
 ## **Kenapa Project Ini Dibuat?**
 
 Saat ini, hampir semua orang memiliki banyak akun online, seperti akun media sosial, akun email, dan akun lainnya. Setiap akun ini biasanya memiliki password yang berbeda-beda. Masalahnya, semakin banyak akun yang dimiliki, semakin sulit untuk mengingat semua password tersebut. Akibatnya, banyak orang memilih untuk menggunakan password yang mudah diingat (tapi kurang aman) atau bahkan menulisnya di tempat yang tidak aman.
 
-**Project Password Manager ini hadir untuk menyelesaikan masalah tersebut.** Dengan aplikasi ini, kamu hanya perlu mengingat satu password saja—yaitu password aplikasi ini. Semua password untuk akun-akun lainnya akan disimpan dengan aman di dalam aplikasi, sehingga kamu tidak perlu lagi khawatir melupakan atau kehilangan password. Aplikasi ini juga menjaga keamanan data dengan enkripsi yang kuat, memastikan informasi kamu tetap aman.
+**Project Password-Vault ini hadir untuk menyelesaikan masalah tersebut.** Dengan aplikasi ini, kamu hanya perlu mengingat satu password saja—yaitu password aplikasi ini. Semua password untuk akun-akun lainnya akan disimpan dengan aman di dalam aplikasi, sehingga kamu tidak perlu lagi khawatir melupakan atau kehilangan password. Aplikasi ini juga menjaga keamanan data dengan enkripsi yang kuat, memastikan informasi kamu tetap aman.
 
 ---
 
